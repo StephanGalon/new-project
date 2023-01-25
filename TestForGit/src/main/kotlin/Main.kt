@@ -55,7 +55,52 @@ fun main() {
 //    println(threeOreSeven(3,5)); println(threeOreSeven(3,7)); println(threeOreSeven(5,7))
 //    println(threeOreSeven(4,5))//Question 20
 
-    println(multi10under2(111)); println(multi10under2(77))//Question 21
+//    println(multi10under2(111)); println(multi10under2(77))//Question 21
+
+//    println(oneFromToIn(12,4)); println(oneFromToIn(28,20)); println(oneFromToIn(4,9))
+//    println(oneFromToIn(100,-8))//Question 22
+
+//    println(twoAreOne(3, 4, 7)); println(twoAreOne(3, 4, 12))//Question 23
+
+//    println(whoIsBigger(12, 33, 3)); println(whoIsBigger(12, 10, 3)); println(whoIsBigger(12, 33, 44))//Question 24
+
+//    println(twoOrMore(1,2,3));println(twoOrMore(55,15,12));println(twoOrMore(12,145,122))//Question 25
+
+//    println(lessThanTwenty( 123,22,120)); println(lessThanTwenty( 12,13,120)); println(lessThanTwenty( 123,22,400))//Question 26
+
+//    println(twoThroughFive(123,1123)); println(twoThroughFive(50,5)); println(twoThroughFive(123,123))//Question 27
+
+//    println(masterThree(30,3)); println(masterThree(12,48)); println(masterThree(56,26))
+//    println(masterThree(84,71))//Question 28
+
+//    println(sumOfThree(12,12,3)); println(sumOfThree(8,7,3))//Question 29
+
+//    println(wildTherteen(13,23,12)); println(wildTherteen(44,13,12)); println(wildTherteen(17,23,13))
+//    println(wildTherteen(15,23,12))//Question 30
+
+//    println(betweenZero(13,120,180)); println(betweenZero(120,17,180)); println(betweenZero(13,120,17))
+//    println(betweenZero(150,140,230)); println(betweenZero(15,12,11))//Question 31
+
+//    println(notOverTherteen(13, 12)); println(notOverTherteen(8, 12)); println(notOverTherteen(43,12))
+//    println(notOverTherteen(11, 15)); println(notOverTherteen( 12, 18)); println(notOverTherteen(15,18))//Question 32
+
+//    println(smallMediumLarge(12,34,2));println(smallMediumLarge(10,5,0))//Question 33
+
+//    println(equalFirstAndLast(intArrayOf(4))); println(equalFirstAndLast(intArrayOf(3,4,1,2,3)))
+//    println(equalFirstAndLast(intArrayOf(2,3)))//Question 34
+
+//    println(sameFirstAndLast(intArrayOf(2, 3, 4), intArrayOf(2, 3, 2, 3, 4)))
+//    println(sameFirstAndLast(intArrayOf(2, 3, 4, 5), intArrayOf(2, 3, 2, 3, 4)))
+//    println(sameFirstAndLast(intArrayOf(1, 2, 3, 4, 5), intArrayOf(2, 3, 2, 3, 4)))//Question35
+
+//    println(arraySum(intArrayOf(1,2,3)))//Question 36
+
+//    println(rotateArray(intArrayOf(1,2,3,4,5)).contentToString())//Question 37 and 38
+
+//    println(twoToOne(intArrayOf(1,2,3,4,5),intArrayOf(1,2,3,4)).contentToString())//Question 39
+//    println(twoToOne2(intArrayOf(1,2,3,4,5),intArrayOf(1,2,3,4)).contentToString())//Question 39
+
+
 }
 fun sum(x: Int, y: Int) :Int {
     val sum = x + y
@@ -154,4 +199,71 @@ fun threeOreSeven(x: Int, y: Int) :Boolean{
 }
 fun multi10under2(x: Int) :Boolean{
     return if(x % 10 <=2) true else false
+}
+fun oneFromToIn(x: Int, y: Int) :Int{
+    return if(x >= 10 && x <= 20 || y >= 10 && y <= 20) 18 else x + y
+}
+fun twoAreOne(x: Int, y: Int, z: Int) :Boolean{
+    return if(x + y == z) true else false
+}
+fun whoIsBigger(x: Int, y: Int, z: Int) :Boolean{
+    return if(y > x && z > y) true else false
+}
+fun twoOrMore(x: Int, y: Int, z: Int) :Boolean{
+    return if (x % 10 == y % 10 || x % 10 == z %10 || y % 10 == z % 10) true else false
+}
+fun lessThanTwenty(x: Int, y: Int, z: Int) :Boolean{
+    return if(abs(x - y) <= 20 || abs(x - z) <= 20 || abs(y - z) <= 20) true else false
+}
+fun twoThroughFive(x: Int, y: Int) :Int{
+    return if (x == y) 0 else if ((x % 5 == y % 5 && x < y)|| x < y) x else y
+}
+fun masterThree(x: Int, y: Int) :Boolean{
+    return if (x % 10 == y % 10 || x / 10 == y % 10 || x % 10 == y /10 || x /10 == y /10) true else false
+}
+fun sumOfThree(x: Int, y: Int, z: Int) :Int{
+    return if (x == y ) z else x + y + z
+}
+fun wildTherteen(x: Int, y: Int, z: Int) :Int{
+    return if(x % 13 ==0) y + z else if(y % 13 ==0) x + z else if(z % 13 == 0) x +y else x +y + z
+ }
+fun betweenZero(x: Int, y: Int, z: Int) :Int {
+    val a = if (x == 17 || x == 13 || (x > 10 && x < 20)) 0 else x
+    val b = if (y == 17 || y == 13 || (y > 10 && y < 20)) 0 else y
+    val c = if (z == 17 || z == 13 || (z > 10 && z < 20)) 0 else z
+    return a + b + c
+}
+fun notOverTherteen(x: Int, y: Int) :Int{
+    return if(x >= 13 && y >= 13) 0 else if(x - 13 <= 0 && (abs(x - 13) < abs(y - 13))) x else if (y - 13 <=0) y else x
+}
+fun smallMediumLarge(x: Int, y: Int, z: Int) :Boolean{
+    val lst = listOf(x, y, z)
+    val listsort = lst.sorted()
+    return if (listsort.get(1) - listsort.get(0) == listsort.get(2) - listsort.get(1)) true else false
+}
+fun equalFirstAndLast(x: IntArray) :Boolean{
+    return if (x.first().equals(x.last())) true else false
+}
+fun sameFirstAndLast(x: IntArray, y: IntArray) :Boolean{
+    return if (x.first().equals(y.first()) || x.last().equals(y.last())) true else false
+}
+fun arraySum(x: IntArray) :Int{
+     return x.sum()
+}
+fun rotateArray(x: IntArray) :IntArray{
+    return x.reversed().toIntArray()
+}
+fun twoToOne(x: IntArray, y: IntArray) :IntArray{       //first try
+    var ar1 = x
+    var ar2 = y
+    ar1 = ar1.filter { it != ar1.first() }.toIntArray()
+    ar1 = ar1.filter { it != ar1.last() }.toIntArray()
+    ar2 = ar2.filter { it != ar2.first() }.toIntArray()
+    ar2 = ar2.filter { it != ar2.last() }.toIntArray()
+    var ar3 = ar1 + ar2
+    return ar3
+}
+fun twoToOne2(x: IntArray, y: IntArray) :IntArray{
+    val ar1 = x.copyOfRange(1,x.size-1) + y.copyOfRange(1,y.size-1)
+    return ar1
 }
