@@ -100,7 +100,15 @@ fun main() {
 //    println(twoToOne(intArrayOf(1,2,3,4,5),intArrayOf(1,2,3,4)).contentToString())//Question 39
 //    println(twoToOne2(intArrayOf(1,2,3,4,5),intArrayOf(1,2,3,4)).contentToString())//Question 39
 
+//    println(middleArray(intArrayOf(1,2,3,4,5),intArrayOf(10,20,30,40,50)).contentToString())//Question 39 corrected
 
+//    println(firstAndLastTransfer(intArrayOf(1,2,3,4,5)).contentToString())//Question 40
+
+//    println(fifteenOrTwenty(intArrayOf(1,3,15,6,5))); println(fifteenOrTwenty(intArrayOf(1,3,6,5,20)))
+//    println(fifteenOrTwenty(intArrayOf(1,3,6,5)))//Question 41
+
+    println(notFifteenOrTwenty(intArrayOf(1,3,15,6,5))); println(notFifteenOrTwenty(intArrayOf(1,3,6,5,20)))
+    println(notFifteenOrTwenty(intArrayOf(1,3,6,5)))//Question 42
 }
 fun sum(x: Int, y: Int) :Int {
     val sum = x + y
@@ -263,7 +271,20 @@ fun twoToOne(x: IntArray, y: IntArray) :IntArray{       //first try
     var ar3 = ar1 + ar2
     return ar3
 }
-fun twoToOne2(x: IntArray, y: IntArray) :IntArray{
-    val ar1 = x.copyOfRange(1,x.size-1) + y.copyOfRange(1,y.size-1)
-    return ar1
+fun twoToOne2(x: IntArray, y: IntArray) :IntArray{      //second try
+    val ar = x.copyOfRange(1,x.size-1) + y.copyOfRange(1,y.size-1)
+    return ar
+}
+fun middleArray(x: IntArray, y: IntArray) :IntArray{    //correct try
+    val ar = arrayOf(x.get((x.size/2)-1) , y.get((y.size/2)-1))
+    return ar.toIntArray()
+}
+fun firstAndLastTransfer(x: IntArray) :IntArray{
+    return arrayOf(x.first(),x.last()).toIntArray()
+}
+fun fifteenOrTwenty(x: IntArray) :Boolean{
+    return if(x.contains(15) || x.contains(20)) true else false
+}
+fun notFifteenOrTwenty(x: IntArray) :Boolean{
+    return if(x.contains(15) || x.contains(20)) false else true
 }
