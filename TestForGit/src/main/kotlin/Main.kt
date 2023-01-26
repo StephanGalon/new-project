@@ -1,5 +1,5 @@
 import java.lang.Math.abs
-import java.sql.Array
+
 
 fun main() {
 //    println("Hello Git!")
@@ -107,8 +107,26 @@ fun main() {
 //    println(fifteenOrTwenty(intArrayOf(1,3,15,6,5))); println(fifteenOrTwenty(intArrayOf(1,3,6,5,20)))
 //    println(fifteenOrTwenty(intArrayOf(1,3,6,5)))//Question 41
 
-    println(notFifteenOrTwenty(intArrayOf(1,3,15,6,5))); println(notFifteenOrTwenty(intArrayOf(1,3,6,5,20)))
-    println(notFifteenOrTwenty(intArrayOf(1,3,6,5)))//Question 42
+//    println(notFifteenOrTwenty(intArrayOf(1,3,15,6,5))); println(notFifteenOrTwenty(intArrayOf(1,3,6,5,20)))
+//    println(notFifteenOrTwenty(intArrayOf(1,3,6,5)))//Question 42
+
+//    println(twoTenAndTwenty(intArrayOf(1,1))); println(twoTenAndTwenty(intArrayOf(1,2))); println(twoTenAndTwenty(intArrayOf(1)))//Question 43
+
+//    println(checkArrayAndSet(intArrayOf(1,5,7)).contentToString()); println(checkArrayAndSet(intArrayOf(1,2,7)).contentToString())//Question 44
+
+//    println(arraySumToCompare(intArrayOf(3,5,7), intArrayOf(5,3,12)).contentToString())//Question 45
+
+//    println(twoFromTheMiddle(intArrayOf(1,2,3,4,5,6)).contentToString())//Question 46
+
+//    println(makeTwoArraysToOne(intArrayOf(30,50,70), intArrayOf(10,20,40)).contentToString())//Question 47
+
+//    println(turnFirstLast(intArrayOf(1,2,3,4,5,6)).contentToString())//Question 48
+
+//    println(turnFirstLast2(intArrayOf(1,2,3,4,5,6)).contentToString())//Question 48
+
+//    println(middleThree(intArrayOf(1,2,3,4,5,6,7,8,9)).contentToString())//Question 49
+
+
 }
 fun sum(x: Int, y: Int) :Int {
     val sum = x + y
@@ -287,4 +305,42 @@ fun fifteenOrTwenty(x: IntArray) :Boolean{
 }
 fun notFifteenOrTwenty(x: IntArray) :Boolean{
     return if(x.contains(15) || x.contains(20)) false else true
+}
+fun twoTenAndTwenty(x: IntArray) : Boolean{
+    return if(x.size > 1 || x.first().equals(x.first() + 1)) true else false
+}
+fun checkArrayAndSet(x: IntArray) :IntArray{
+   var lst = x.toMutableList()
+    if (lst.size == 3 && lst.get(1) == 5 && lst.get(2) == 7) lst.set(2,1)
+    return lst.toIntArray()
+}
+fun arraySumToCompare(x: IntArray, y: IntArray) :IntArray{
+     return if(x.sum() > y.sum()) x else y
+}
+fun twoFromTheMiddle(x: IntArray) :IntArray{
+
+    val  array = arrayOf(x.get(x.size /2), x.get((x.size /2) +1) )
+    return array.toIntArray()
+}
+fun makeTwoArraysToOne(x: IntArray, y: IntArray) :IntArray{
+    return x + y
+}
+fun turnFirstLast(x: IntArray) :IntArray{
+    var lst = x.toMutableList()
+    val rem = x.get(0)
+    lst.set(0, lst.get(lst.last() - 1))
+    lst.set(lst.last() - 1, rem)
+    return lst.toIntArray()
+}
+fun turnFirstLast2(x: IntArray) :IntArray{
+    var array = x
+    val rem = x.get(0)
+    array.set(0, array.get(array.last() - 1))
+    array.set(array.last() - 1, rem)
+    return array
+}
+fun middleThree(x: IntArray) : IntArray{
+    var xHalfSize = x.size / 2
+    val array = arrayOf(x.get(xHalfSize - 1),x.get(xHalfSize), x.get(xHalfSize + 1))
+    return array.toIntArray()
 }
