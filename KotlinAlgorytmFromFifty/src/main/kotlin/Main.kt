@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
 //    println(biggestFromFirstSecendThird(intArrayOf(50,2,3,4,1)))
 //    println(biggestFromFirstSecendThird(intArrayOf(1,2,90,4,2)))//Question 50
 
-    println(numbersOfEven(intArrayOf(1,2,3,4,5,6,7,8,9,10)))//Question 51
+//    println(numbersOfEven(intArrayOf(1,2,3,4,5,6,7,8,9,10)))//Question 51
 
 //    println(arrayNoSeventeen(intArrayOf(1,2,3,4,5,6,7,8,9,10)))
 //    println(arrayNoSeventeen(intArrayOf(17,1)))//Question 52
@@ -20,8 +20,8 @@ fun main(args: Array<String>) {
 //    println(arrayWithfivesAndSevens(intArrayOf(1,2,3,7))); println(arrayWithfivesAndSevens(intArrayOf(1,2,3,5)))
 //    println(arrayWithfivesAndSevens(intArrayOf(1,2,3,4,6)));println(arrayWithfivesAndSevens(intArrayOf(1,2,5,7)))//Questrion 55
 
-    println(sumOfFivesAreFifteen(intArrayOf(5,5,5))); println(sumOfFivesAreFifteen(intArrayOf(1,2,3,5,5)))
-    println(sumOfFivesAreFifteen(intArrayOf(1,2,5,5,5,5,6)));println(sumOfFivesAreFifteen(intArrayOf(1,2,5,7)))//Questrion 56
+//    println(sumOfFivesAreFifteen(intArrayOf(5,5,5))); println(sumOfFivesAreFifteen(intArrayOf(1,2,3,5,5)))
+//    println(sumOfFivesAreFifteen(intArrayOf(1,2,5,5,5,5,6)));println(sumOfFivesAreFifteen(intArrayOf(1,2,5,7)))//Questrion 56
 
 //    println(sumOfthreesBiggerSumOfFives(intArrayOf(3,3,5))); println(sumOfthreesBiggerSumOfFives(intArrayOf(3,3,3,5,5)))//Question 57
 
@@ -66,13 +66,13 @@ fun main(args: Array<String>) {
 
 //    println(allZerosToLeft(intArrayOf(5,12,0,2,0,0,3,4,5,6)).contentToString())//Question 71
 
-    println(allFivesToZeroAndRight(intArrayOf(1,2,5,3,4,5,6,7,5)).contentToString())// Question 72
-    println(allFivesToZeroAndRight2(intArrayOf(1,2,5,3,4,5,6,7,5)).contentToString())// Question 72
-
+//    println(allFivesToZeroAndRight(intArrayOf(1,2,5,3,4,5,6,7,5)).contentToString())// Question 72
+//    println(allFivesToZeroAndRight2(intArrayOf(1,2,5,3,4,5,6,7,5)).contentToString())// Question 72
 
 //    println(firstAllEven(intArrayOf(1,2,5,3,4,5,6,7,5)).contentToString())//Question 73
 
 //    println(greaterOrEqualThePrevious(intArrayOf(1,2,3,4))); println(greaterOrEqualThePrevious(intArrayOf(5,3,4)))//Question 74
+//    println(greaterOrEqualThePrevious2(intArrayOf(1,2,3,4))); println(greaterOrEqualThePrevious2(intArrayOf(5,3,4)))//Question 74
 
 //    println(fifteenTwin(intArrayOf(12,13,14,15,15))); println(fifteenTwin(intArrayOf(12,13,14,15)))//Question 75
 
@@ -210,7 +210,6 @@ fun invertedNewArray(x: IntArray) :IntArray {
     return invArray
 }
 fun invertedNewArray2(x: IntArray) = x.reversedArray() //the same??
-
 fun onlyUpToFive(x: IntArray) :IntArray{
     var toFive = mutableListOf<Int>()
     var trigger = 0
@@ -280,6 +279,13 @@ fun greaterOrEqualThePrevious(x: IntArray) :Boolean{
     for (i in 1 until x.size)
         if(x.get(i) < x.get(i -1)) switch = 1
             return if(switch == 0)true else false
+}
+fun greaterOrEqualThePrevious2(x: IntArray) :Boolean{
+    var switch = 0
+    repeat(x.size -1){
+       if(x[it + 1] >= x[it]) switch = 1
+    }
+    return if (switch == 0) false else true
 }
 fun fifteenTwin(x: IntArray) :Boolean{
     var switch = 0
