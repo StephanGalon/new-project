@@ -9,10 +9,16 @@ fun main(args: Array<String>) {
 //    println(com.stephan.findDuplicates2(intArrayOf(1,2,3,4,5,1)))
 //    println(com.stephan.makePassword(12,4))
 //    com.stephan.continues()
-    val v1 = Car("Ford","Mustang", 1969)
-    val v2 = Car("Mercedes", "E",2005)
-    v1.drive()
-    v2.maxSpeed(300)
+//    val v1 = Car("Ford","Mustang", 1969)
+//    val v2 = Car("Mercedes", "E",2005)
+//    v1.drive()
+//    v2.maxSpeed(300)
+    var a = "A"
+    var b = "B"
+    a = b.also { b = a }
+    println(a)
+    println(b)
+
 
 }
 fun first(){
@@ -95,3 +101,5 @@ class Car(var brand: String, var model: String, var year: Int){
         println("Max speed is: " + x)
     }
 }
+
+
