@@ -76,7 +76,7 @@ fun main() {
 
 }
 
-// find the largest value from first, last, and middle elements of a given array of integers of odd length (atleast 1).
+// find the largest value from first, last, and middle elements of a given array of integers of odd length (atleast 1). 50
 fun biggestFromFirstSecendThird(x: IntArray) :Int{
     return if(x[0] > x.last() && x[0] > (x[x.size / 2])) x.first()
     else if ((x[x.size / 2]) > x.last()) x[x.size / 2]
@@ -84,7 +84,7 @@ fun biggestFromFirstSecendThird(x: IntArray) :Int{
 }
 
 
-// count number of even elements in a given array of integers.
+// count number of even elements in a given array of integers. 51
 fun numbersOfEven(x: IntArray) :Int{
     var count = 0
     for (ini in x)
@@ -94,7 +94,7 @@ fun numbersOfEven(x: IntArray) :Int{
 }
 
 
-//compute the sum of values in a given array of integers except the number 17. Return 0 if the given array has no integer.
+//compute the sum of values in a given array of integers except the number 17. Return 0 if the given array has no integer. 52
 fun arrayNoSeventeen(x: IntArray) :Int{
     var sum = 0
         for (i in x.indices)
@@ -104,7 +104,7 @@ fun arrayNoSeventeen(x: IntArray) :Int{
 }
 
 
-//compute the sum of the numbers in a given array except those numbers starting with 5 followed by atleast one 6.
+//compute the sum of the numbers in a given array except those numbers starting with 5 followed by atleast one 6. 53
 // Return 0 if the given array has no integer.
 fun arrayNoSevenFollowedSix(x: IntArray) :Int{
     var sum =0
@@ -117,7 +117,7 @@ fun arrayNoSevenFollowedSix(x: IntArray) :Int{
 }
 
 
-//check whether a given array of integers contains 5 next to a 5 somewhere.
+//check whether a given array of integers contains 5 next to a 5 somewhere. 54
 fun noFiveNextToFive(x: IntArray) :Boolean{
     var switch = 0
     for (i in 0 until x.size - 1)
@@ -127,7 +127,7 @@ fun noFiveNextToFive(x: IntArray) :Boolean{
 }
 
 
-// check whether a given array of integers contains 5's and 7's.
+// check whether a given array of integers contains 5's and 7's. 55
 fun arrayWithfifesAndSevens(x: IntArray) :Boolean{
     var switch = 0
     for (i in x.indices)
@@ -136,7 +136,7 @@ fun arrayWithfifesAndSevens(x: IntArray) :Boolean{
 }
 
 
-//check whether the sum of all 5' in the array exactly 15 in a given array of integers.
+//check whether the sum of all 5' in the array exactly 15 in a given array of integers. 56
 fun sumOfFivesAreFifteen(x: IntArray): Boolean{
     var sum = 0
     for (i in x.indices)
@@ -146,7 +146,7 @@ fun sumOfFivesAreFifteen(x: IntArray): Boolean{
 }
 
 
-// check whether the number of 3's is greater than the number of 5's.
+// check whether the number of 3's is greater than the number of 5's. 57
 fun sumOfthreesBiggerSumOfFives(x: IntArray) :Boolean{
     var sum3 = 0
     var sum5 = 0
@@ -160,21 +160,21 @@ fun sumOfthreesBiggerSumOfFives(x: IntArray) :Boolean{
 }
 
 
-//check whether a given array of integers contains a 3 or a 5.
+//check whether a given array of integers contains a 3 or a 5. 58
 fun containsTreesOrFives(x: IntArray) = 5 in x || 3 in x
 //:Boolean{
 //    return if(5 in x || 3 in x) true else false
 //}
 
 
-// check  whether a given array of integers contains no 3 or a 5.
+// check  whether a given array of integers contains no 3 or a 5. 59
 fun noContainsTreesOrFives(x: IntArray) =5 !in x || 3 !in x
 //:Boolean{
 //    return if(5 in x || 3 in x) false else true
 //}
 
 
-//check whether an array of integers contains a 3 next to a 3 or a 5 next to a 5 or both.
+//check whether an array of integers contains a 3 next to a 3 or a 5 next to a 5 or both. 60
 fun threeToTreeOrFiveToFife(x: IntArray) :Boolean{
     var check =0
     for(i in 0 until x.size -1)
@@ -183,7 +183,7 @@ fun threeToTreeOrFiveToFife(x: IntArray) :Boolean{
 }
 
 
-//check a given array of integers and return true if the given array contains two 5's next to each other, or two 5 separated by one element.
+//check a given array of integers and return true if the given array contains two 5's next to each other, or two 5 separated by one element. 61
 fun fiveNearFiveOrNot(x: IntArray) :Boolean{
     var check =0
     for(i in 0 until x.size -1)
@@ -194,7 +194,7 @@ fun fiveNearFiveOrNot(x: IntArray) :Boolean{
 }
 
 
-//check a given array of integers and return true if there is a 3 with a 5 somewhere later in the given array.
+//check a given array of integers and return true if there is a 3 with a 5 somewhere later in the given array. 62
 fun firstthreeThenfive(x: IntArray) :Boolean{
     var switch = 0
     var merk = 0
@@ -206,7 +206,7 @@ fun firstthreeThenfive(x: IntArray) :Boolean{
 }
 
 
-// check a given array of integers and return true if the given array contains either 2 even or 2 odd values all next to each other.
+// check a given array of integers and return true if the given array contains either 2 even or 2 odd values all next to each other. 63
 fun twoEvenOrOdd(x: IntArray) :Boolean{
     var switch = 0
     for (i in 0 until x.size -1)
@@ -215,7 +215,7 @@ fun twoEvenOrOdd(x: IntArray) :Boolean{
 }
 
 
-//check a given array of integers and return true if the value 5 appears 5 times and there are no 5 next to each other.
+//check a given array of integers and return true if the value 5 appears 5 times and there are no 5 next to each other. 64
 fun fiveFiveFive(x: IntArray) :Boolean{
     var check = 1
     var exclusion = 0
@@ -227,7 +227,7 @@ fun fiveFiveFive(x: IntArray) :Boolean{
 }
 
 
-// check a given array of integers and return true if every 5 that appears in the given array is next to another 5.
+// check a given array of integers and return true if every 5 that appears in the given array is next to another 5. 65
 fun everyFiveIsNextTooFive(x: IntArray) :Boolean {
     var check = 0
     var check2 = 0
@@ -242,7 +242,7 @@ fun everyFiveIsNextTooFive(x: IntArray) :Boolean {
 }
 
 
-//check a given array of integers and return true if the specified number of same elements appears at the start and end of the given array.
+//check a given array of integers and return true if the specified number of same elements appears at the start and end of the given array. 66
 fun sameElemendsStartEnd(x: IntArray) :Boolean{
     val firsSeco = intArrayOf(x[0], x[1])
     val lasttwo = intArrayOf(x[x.size - 2], x[x.size -1])
@@ -250,7 +250,7 @@ fun sameElemendsStartEnd(x: IntArray) :Boolean{
 }
 
 
-//check a given array of integers and return true if the array contains three increasing adjacent numbers.
+//check a given array of integers and return true if the array contains three increasing adjacent numbers. 67
 fun threeFollowBigger(x: IntArray) :Boolean{
 //    var check = 0
 //    for (i in 0 until x.size - 2)
@@ -263,14 +263,14 @@ fun threeFollowBigger(x: IntArray) :Boolean{
 }
 
 
-// shift an element in left direction and return a new array.
+// shift an element in left direction and return a new array. 68
 fun invertedNewArray(x: IntArray): IntArray {
       return x.reversedArray()
 }
 fun invertedNewArray2(x: IntArray) = x.reversedArray() //the same?? yes
 
 
-// create a new array taking the elements before the element value 5 from a given array of integers.
+// create a new array taking the elements before the element value 5 from a given array of integers. 69
 fun onlyUpToFive(x: IntArray) = x.filter { it != 5 }.toIntArray()
 //:IntArray{
 //    var toFive = mutableListOf<Int>()
@@ -294,7 +294,7 @@ fun onlyUpToFive(x: IntArray) = x.filter { it != 5 }.toIntArray()
 //}
 
 
-// create a new array taking the elements after the element value 5 from a given array of integers.
+// create a new array taking the elements after the element value 5 from a given array of integers. 70
 fun onlyAfterFive(x: IntArray) :IntArray {
     val toFive = mutableListOf<Int>()
     for (i in x.indices)
@@ -309,7 +309,7 @@ fun onlyAfterFive2(x: IntArray) :IntArray {      //better ??
 
 
 
-//create a new array from a given array of integers shifting all zeros to left direction.
+//create a new array from a given array of integers shifting all zeros to left direction. 71
 fun allZerosToLeft(x: IntArray) :IntArray{
 //    val zeros = mutableListOf<Int>()
 //    for (i in x.indices)
@@ -322,7 +322,7 @@ fun allZerosToLeft(x: IntArray) :IntArray{
 }
 
 
-// create a new array after replacing  all the values 5 with 0 shifting all zeros to right direction.
+// create a new array after replacing  all the values 5 with 0 shifting all zeros to right direction. 72
 fun allFivesToZeroAndRight(x: IntArray) :IntArray{
     val zeros = x.toMutableList()
     val zerosort1 = mutableListOf<Int>()
@@ -342,7 +342,7 @@ fun allFivesToZeroAndRight2(x: IntArray) :IntArray{         //better??
 }
 
 
-//create new array from a given array of integers shifting all even numbers before all odd numbers.
+//create new array from a given array of integers shifting all even numbers before all odd numbers. 73
 fun firstAllEven(x: IntArray) :IntArray {
 //    val even = mutableListOf<Int>()
 //    val odd = mutableListOf<Int>()
@@ -356,7 +356,7 @@ fun firstAllEven(x: IntArray) :IntArray {
 }
 
 
-//check whether the value of each element is equal or greater than the value of previous element of a given array of integers.
+//check whether the value of each element is equal or greater than the value of previous element of a given array of integers. 74
 fun greaterOrEqualThePrevious(x: IntArray) :Boolean{
 //    println(x.contentToString())
     var switch = 0
@@ -366,7 +366,7 @@ fun greaterOrEqualThePrevious(x: IntArray) :Boolean{
 }
 
 
-// check a given array (length will be atleast 2) of integers and return true if there are two values 15, 15 next to each other.
+// check a given array (length will be atleast 2) of integers and return true if there are two values 15, 15 next to each other. 75
 fun fifteenTwin(x: IntArray) :Boolean{
     var switch = 0
     for (i in 0 until x.size - 1)
