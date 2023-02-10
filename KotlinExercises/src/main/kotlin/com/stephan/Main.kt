@@ -1,35 +1,98 @@
 package com.stephan
 
-fun main(args: Array<String>) {
-// com.stephan.first()
-//    com.stephan.chess()
-//    com.stephan.integerTest()
-//    com.stephan.nullabel()
-//    println(com.stephan.findDuplicates(intArrayOf(1,2,3,4,5,1)))
-//    println(com.stephan.findDuplicates2(intArrayOf(1,2,3,4,5,1)))
-//    println(com.stephan.makePassword(12,4))
-//    com.stephan.continues()
-//    val v1 = Car("Ford","Mustang", 1969)
-//    val v2 = Car("Mercedes", "E",2005)
-//    v1.drive()
-//    v2.maxSpeed(300)
-//    var a = "A"
-//    var b = "B"
-//    a = b.also { b = a }
-//    println(a)
-//    println(b)
-//    printi()
-//    breakAndContinue()
-//    ranges()
-//    forEach()
-//    switch(42)
-//    modulo(5, 4, 50)
-//    println(fibonacci(2))
-//    println(factorial(5)) //Recursive
-//    println(facul(n = 5)) //loop and specify parameters explicitly
-    println(abs(-6));println(abs(6))
+//fun main(args: Array<String>) {
+//// com.stephan.first()
+////    com.stephan.chess()
+////    com.stephan.integerTest()
+////    com.stephan.nullabel()
+////    println(com.stephan.findDuplicates(intArrayOf(1,2,3,4,5,1)))
+////    println(com.stephan.findDuplicates2(intArrayOf(1,2,3,4,5,1)))
+////    println(com.stephan.makePassword(12,4))
+////    com.stephan.continues()
+////    val v1 = Car("Ford","Mustang", 1969)
+////    val v2 = Car("Mercedes", "E",2005)
+////    v1.drive()
+////    v2.maxSpeed(300)
+////    var a = "A"
+////    var b = "B"
+////    a = b.also { b = a }
+////    println(a)
+////    println(b)
+////    printi()
+////    breakAndContinue()
+////    ranges()
+////    forEach()
+////    switch(42)
+////    modulo(5, 4, 50)
+////    println(fibonacci(2))
+////    println(factorial(5)) //Recursive
+////    println(facul(n = 5)) //loop and specify parameters explicitly
+////    println(abs(-6));println(abs(6))
+////    println(sin(1.0))
+////    val mazeStr = """ //later
+////        | wwwwwswwwwwwwwwwwwww
+////        | W      w w     w   w
+////        | w wwwwww w wwwwww  w
+////        | w          w       w
+////        | w w w wwwwww w     w
+////        | w w w  w w         w
+////        | w w www w w www wwww
+////        | wwwwwwwwwwwwwwwwwdww
+////    """.trimIndent()
+////    val maze = buildMaze(mazeStr)
+//
+//}
+fun main(){     //Lambda expression
+    val lst = listOf(1,2,3,4,5)
+    val newLst = mutableListOf<Int>()
+    for (i in lst)
+        newLst += quadruple(i)
+    val newLst2 = lst.map {i -> i * i}
+    val newLst3 = lst.map { it * it } //Lambda
+        println(newLst)
+        println(newLst2)
+        println(newLst3)
+    //even squared, odd multiplied with 3
+    val newLst4 = lst.map { if (it % 2 == 0) it * it else it * 3}
+    println(newLst4)
+    //Lambda in a variable
+    val quat: (Int) -> Int = {x -> x * x}
+    val newLst5 = lst.map(quat) // lst.map { quat } the same
+    println(newLst5)
+    val newLst6 = lst.map { "*".repeat(it * 2)} //newLst6 is a String
+    println(newLst6)
+    val myQuatFunc = makeFunc(2.0, -1.0, 2.0)
+    printTable(myQuatFunc, -1.0, 1.0)
+    val myCubicFunc = makeFuncCubic(2.0,3.0,4.0,5.0)
+    printTable(myCubicFunc, 1.0,2.0,2)
 }
-
+fun printTable(f: (Double) -> Double,
+               from: Double,
+               to: Double,
+               number: Int = 11)
+{
+    println()
+    println("           x|       f(x)")
+    println("            +           ")
+    for (i in 0 until number){
+        val x = from + (to - from) / (number -1) * i
+        val output = "%10.5f  |  %10.5f"
+        println(output.format(x,f(x)))
+    }
+}
+fun makeFuncCubic(a: Double, b: Double, c: Double, d: Double): (Double) -> Double{
+    return {a * it * it * it + b * it * it+ c * it + d}
+}
+fun makeFunc(a: Double, b: Double, c: Double): (Double) -> Double{
+    return {a * it * it + b * it + c}
+}
+fun quadruple(x: Int) = x * x
+fun buildMaze(s: String): List<MutableList<Char>>{
+    val tmp = mutableListOf<MutableList<Char>>()
+    for (line in s.lines())
+        tmp += line.toMutableList()
+    return tmp.toList()
+}
 fun first(){
     val myArray = arrayOf(13,46,54,654,651,635,496,416,416,4,96874,961,6126,9496,16,49)
     var max = 0
@@ -197,4 +260,26 @@ fun facul(n: Long): Long {
 
     return result
 }
+fun exponent(base: Double, exp: Int): Double{
+    var result: Double = 1.0
+    for(i in 1..exp){
+        result *= base
+    }
+    return result
+}
+fun faculNew(n: Int): Double {
+    var result: Double = 1.0
+    for (i in 1..n){
+        result *= i
+    }
+    return result
+}
+
 fun abs(x: Int) = if(x>=0) x else x * (-1)
+fun sin(x: Double): Double{  //specification in arc measure "Bogenmaß"
+    var result: Double = 0.0
+    for (n in 0..10){
+        result += (exponent(-1.0, n) * exponent(x, (2 * n + 1))) / faculNew(2 * n + 1)
+    }
+        return result
+}

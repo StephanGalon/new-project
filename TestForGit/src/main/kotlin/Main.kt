@@ -32,8 +32,8 @@ fun main() {
 //    println(onlyTwoIn(12,90)); println(onlyTwoIn(42,48)); println(onlyTwoIn(44,56))
 //    println(onlyTwoIn(50,53)); println(onlyTwoIn(48,50))//Question 11
 
-    println(oneValueIn(12, 13)); println(oneValueIn(20, 13)); println(oneValueIn(12, 30))
-    println(oneValueIn(22, 24)); println(oneValueIn(24, 55)); println(oneValueIn(23, 21))//Question 12
+//    println(oneValueIn(12, 13)); println(oneValueIn(20, 13)); println(oneValueIn(12, 30))
+//    println(oneValueIn(22, 24)); println(oneValueIn(24, 55)); println(oneValueIn(23, 21))//Question 12
 
 //    println(nonNegativeValueSameLastDigit(123145, 12312)); println(nonNegativeValueSameLastDigit(1254, 1255))
 //    println(nonNegativeValueSameLastDigit(12, 12312)); println(nonNegativeValueSameLastDigit(1000, 10))//Question 13
@@ -42,10 +42,7 @@ fun main() {
 
 //    countNumber5NextTo()//Question 15
 
-//    val a = intArrayOf(1,2,3,4,5,3,7,5,3,4,9)
-//    val b = intArrayOf(3,4,5,6,7,22,22,22)
-//    val c = intArrayOf(1,2,2,2)
-//    println(tripel(a)); println(tripel(b)); println(tripel(b))//Question 16
+  println(tripel(arrayOf(1,2,3,4,5,3,7,5,3,4,9))); println(tripel(arrayOf(3,4,5,6,7,22,22,22))); println(tripel(arrayOf(1,2,2,2)))//Question 16
 
 //    println(sumInRange(12,5)); println(sumInRange(12,35))//Question 17
 
@@ -279,7 +276,7 @@ fun countNumber5NextTo(){
 
 
 //check if a triple is presents in an array of integers or not. If a value appears three times in a row in an array it is called a triple. 16
-fun tripel(x: IntArray) :Boolean{
+fun tripel(x: Array<Int>) :Boolean{
     for (i in 0 until x.size - 2)
         if (x[i] == x[i + 1] && x[i] == x[i + 2])
         return true
